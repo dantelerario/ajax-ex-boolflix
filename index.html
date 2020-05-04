@@ -12,8 +12,22 @@
 <body>
 
 
-
-
+    <!-- MAIN -->
+    <div class="input">
+      <input class="boxSearch" type="text">
+      <button class="btnSearch" type="button" name="button">Search</button>
+    </div>
+    <div class="moviesContainer container">
+    </div>
+    <!-- TEMPLATE -->
+    <script id="template" type="text/x-handlebars-template">
+      <div class="movie">
+          <img src="{{poster_path}}" alt="">
+          <h3>{{title}}</h3>
+          <span class="originalTitle">{{original_title}}</span>
+          <span class="voteAverage">{{vote_average}}</span>
+      </div>
+    </script>
 
 
     <!-- JS -->
