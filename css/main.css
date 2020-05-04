@@ -1,7 +1,21 @@
 /* GENERAL SETTINGS */
 
 * {
-  margin: 20px;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+/* TEMPLATE */
+
+.movie {
+  border: 2px solid #517191;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+body .input {
+  padding: 10px;
+  margin: 20px 50px;
 }
