@@ -25,8 +25,6 @@ $(document).ready( function() {
         console.log(data.results); //debug
         for (i = 0; i < moviesSuccessList.length; i++) {
           var movies = moviesSuccessList[i];
-          // var starVote = (movies.vote_average / 2);
-          // var roundStarVote = Math.round(starVote);
           if (movies.original_language === 'en') {
             var flagLanguage = '<img src="img/en.svg">';
           } else if (movies.original_language === 'it') {
@@ -67,8 +65,6 @@ $(document).ready( function() {
         console.log(data.results); //debug
         for (i = 0; i < tvSuccessList.length; i++) {
           var tv = tvSuccessList[i];
-          // var starVote = (tv.vote_average / 2);
-          // var roundStarVote = Math.round(starVote);
             if (tv.original_language === 'en') {
               var flagLanguage = '<img src="img/en.svg">';
             } else if (tv.original_language === 'it') {
