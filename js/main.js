@@ -109,6 +109,6 @@ function addStars(vote) {
     } else {
       addIcon += noStar;
     }
-    return addIcon;
   }
+  return addIcon;
 }
