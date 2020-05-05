@@ -27,9 +27,9 @@ $(document).ready( function() {
           var starVote = (movies.vote_average / 2);
           var roundStarVote = Math.round(starVote);
           if (movies.original_language === 'en') {
-            var flagLanguage = "";
+            var flagLanguage = '<img src="img/en.svg">';
           } else if (movies.original_language === 'it') {
-            var flagLanguage = "";
+            var flagLanguage = '<img src="img/it.svg">';
           } else {
             var flagLanguage = tv.original_language;
           }
@@ -69,9 +69,9 @@ $(document).ready( function() {
           var starVote = (tv.vote_average / 2);
           var roundStarVote = Math.round(starVote);
             if (tv.original_language === 'en') {
-              var flagLanguage = "";
+              var flagLanguage = '<img src="img/en.svg">';
             } else if (tv.original_language === 'it') {
-              var flagLanguage = "";
+              var flagLanguage = '<img src="img/it.svg">';
             } else {
               var flagLanguage = tv.original_language;
             }
