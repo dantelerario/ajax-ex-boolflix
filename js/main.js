@@ -4,6 +4,7 @@ $(document).ready( function() {
   var boxSearch = $('.boxSearch');
   var btnSearch = $('.btnSearch');
 
+
   // loading API and search
   btnSearch.on('click', function() {
     moviesList.empty();
@@ -24,8 +25,8 @@ $(document).ready( function() {
         console.log(data.results); //debug
         for (i = 0; i < moviesSuccessList.length; i++) {
           var movies = moviesSuccessList[i];
-          var starVote = (movies.vote_average / 2);
-          var roundStarVote = Math.round(starVote);
+          // var starVote = (movies.vote_average / 2);
+          // var roundStarVote = Math.round(starVote);
           if (movies.original_language === 'en') {
             var flagLanguage = '<img src="img/en.svg">';
           } else if (movies.original_language === 'it') {
@@ -37,7 +38,7 @@ $(document).ready( function() {
             title: movies.title,
             original_title: movies.original_title,
             original_language: flagLanguage,
-            vote_average: roundStarVote,
+            vote_average: addStars(movies.vote_average),
             type: 'MOVIE',
           }
           var htmlMoviesList = template(results);
@@ -66,8 +67,8 @@ $(document).ready( function() {
         console.log(data.results); //debug
         for (i = 0; i < tvSuccessList.length; i++) {
           var tv = tvSuccessList[i];
-          var starVote = (tv.vote_average / 2);
-          var roundStarVote = Math.round(starVote);
+          // var starVote = (tv.vote_average / 2);
+          // var roundStarVote = Math.round(starVote);
             if (tv.original_language === 'en') {
               var flagLanguage = '<img src="img/en.svg">';
             } else if (tv.original_language === 'it') {
@@ -79,7 +80,7 @@ $(document).ready( function() {
             title: tv.name,
             original_title: tv.original_name,
             original_language: flagLanguage,
-            vote_average: roundStarVote,
+            vote_average: addStars(tv.vote_average),
             type: 'TV',
           }
           var htmlTvList = template(results);
@@ -97,3 +98,21 @@ $(document).ready( function() {
 
 
 //  FUNCTIONS
+function addStars(vote) {
+  var fullStar = '<i class="fas fa-star-half"></i>';
+  var noStar = '<i class="far fa-star-half"></i>';
+  var addIcon = '';
+
+  var starVote = (vote / 2);
+  var roundStarVote = Math.round(starVote);
+  vote = roundStarVote;
+
+  for (var i = 0; i < 5; i++) {
+    if (vote > i) {
+      addIcon += fullStar;
+    } else {
+      addIcon += noStar;
+    }
+    return addIcon;
+  }
+}
