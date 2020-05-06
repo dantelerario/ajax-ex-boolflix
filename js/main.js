@@ -51,13 +51,10 @@ function addStars(vote) {
 }
 
 function ajaxCall(query) {
-  var apis = {
-    api1: 'https://api.themoviedb.org/3/search/movie',
-    api2: 'https://api.themoviedb.org/3/search/tv',
-  };
-  for (var key in apis) {
+  var apis = ['movie', 'tv'];
+  apis.forEach(function(apis) {
     $.ajax({
-      url: apis[key],
+      url: 'https://api.themoviedb.org/3/search/' + apis,
       method: 'GET',
       data: {
         api_key: '80fa425ed2ac212a9eb2eafb6396d967',
@@ -65,23 +62,23 @@ function ajaxCall(query) {
         query: query,
       },
       success: function(data) {
-        if (apis = 'https://api.themoviedb.org/3/search/movie') {
+        var moviesSuccessList = data.results;
+        if ( apis == 'movie' ) {
           var moviesList = $('.moviesContainer')
-          var moviesSuccessList = data.results;
           // HANDLEBARS
           var source = $('#template').html();
           var template = Handlebars.compile(source);
-          console.log(data.results); //debug
           for (i = 0; i < moviesSuccessList.length; i++) {
             var movies = moviesSuccessList[i];
             if (movies.original_language === 'en') {
-              var flagLanguage = '<img src="img/en.svg">';
+              var flagLanguage = '<img class="flag" src="img/en.svg">';
             } else if (movies.original_language === 'it') {
-              var flagLanguage = '<img src="img/it.svg">';
+              var flagLanguage = '<img class="flag" src="img/it.svg">';
             } else {
-              var flagLanguage = tv.original_language;
+              var flagLanguage = movies.original_language;
             }
             var results = {
+              poster_path: 'https://image.tmdb.org/t/p/' + 'w342' + movies.poster_path,
               title: movies.title,
               original_title: movies.original_title,
               original_language: flagLanguage,
@@ -94,23 +91,23 @@ function ajaxCall(query) {
           }
           var boxSearch = $('.boxSearch');
           boxSearch.val('');
-        } else if (apis = 'https://api.themoviedb.org/3/search/tv') {
+        } else {
               var moviesList = $('.moviesContainer')
               var tvSuccessList = data.results;
               // HANDLEBARS
               var source = $('#template').html();
               var template = Handlebars.compile(source);
-              console.log(data.results); //debug
               for (i = 0; i < tvSuccessList.length; i++) {
                 var tv = tvSuccessList[i];
                   if (tv.original_language === 'en') {
-                    var flagLanguage = '<img src="img/en.svg">';
+                    var flagLanguage = '<img class="flag" src="img/en.svg">';
                   } else if (tv.original_language === 'it') {
-                    var flagLanguage = '<img src="img/it.svg">';
+                    var flagLanguage = '<img class="flag" src="img/it.svg">';
                   } else {
                     var flagLanguage = tv.original_language;
                   }
                 var results = {
+                  poster_path: 'https://image.tmdb.org/t/p/' + 'w342' + tv.poster_path,
                   title: tv.name,
                   original_title: tv.original_name,
                   original_language: flagLanguage,
@@ -129,7 +126,9 @@ function ajaxCall(query) {
           console.log('ERROR');
         },
     });
-  }
+  });
+
+
 
   // $.ajax({
   //   url: 'https://api.themoviedb.org/3/search/movie',

@@ -20,7 +20,7 @@ body .input {
   margin: 20px 50px;
 }
 
-.moviesContainer img {
+.moviesContainer .flag {
   width: 30px;
   height: 30px;
 }
