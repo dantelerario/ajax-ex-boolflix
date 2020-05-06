@@ -10,24 +10,30 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!-- HEADER -->
+    <header>
+      <h1>BOOLFLIX</h1>
+      <div class="input">
+        <input class="boxSearch" type="text">
+        <button class="btnSearch" type="button" name="button">Search</button>
+      </div>
+    </header>
 
 
     <!-- MAIN -->
-    <div class="input">
-      <input class="boxSearch" type="text">
-      <button class="btnSearch" type="button" name="button">Search</button>
-    </div>
     <div class="moviesContainer container">
     </div>
     <!-- TEMPLATE -->
     <script id="template" type="text/x-handlebars-template">
       <div class="movie">
-          <img src="{{{poster_path}}}" alt="">
-          <h3>TITOLO: "{{title}}"</h3>
-          <span class="originalTitle">TITOLO ORIGINALE: "{{original_title}}"</span>
-          <span class="originalLanguage">LINGUA ORIGINALE: {{{original_language}}}</span>
-          <span class="voteAverage">VOTO MEDIO: "{{{vote_average}}}"</span>
-          <span class="type">TIPO: "{{type}}"</span>
+          <img class="poster" src="{{{poster_path}}}" alt="">
+          <div class="hidden">
+            <h3>TITOLO: "{{title}}"</h3>
+            <span class="originalTitle">TITOLO ORIGINALE: "{{original_title}}"</span>
+            <span class="originalLanguage">LINGUA ORIGINALE: {{{original_language}}}</span>
+            <span class="voteAverage">VOTO MEDIO: "{{{vote_average}}}"</span>
+            <span class="type">TIPO: "{{type}}"</span>
+          </div>
       </div>
     </script>
 
