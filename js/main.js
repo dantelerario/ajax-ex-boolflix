@@ -77,8 +77,13 @@ function ajaxCall(query) {
             } else {
               var flagLanguage = '"' + movies.original_language + '"';
             }
+            if (movies.poster_path === null) {
+              var posterPath = 'img/no-poster.png';
+            } else {
+              var posterPath = 'https://image.tmdb.org/t/p/' + 'w342' + movies.poster_path;
+            }
             var results = {
-              poster_path: 'https://image.tmdb.org/t/p/' + 'w342' + movies.poster_path,
+              poster_path: posterPath,
               title: movies.title,
               original_title: movies.original_title,
               original_language: flagLanguage,
@@ -106,8 +111,13 @@ function ajaxCall(query) {
                   } else {
                     var flagLanguage = tv.original_language;
                   }
+                  if (tv.poster_path === null) {
+                    var posterPath = 'img/no-poster.png';
+                  } else {
+                    var posterPath = 'https://image.tmdb.org/t/p/' + 'w342' + tv.poster_path;
+                  }
                 var results = {
-                  poster_path: 'https://image.tmdb.org/t/p/' + 'w342' + tv.poster_path,
+                  poster_path: posterPath,
                   title: tv.name,
                   original_title: tv.original_name,
                   original_language: flagLanguage,
