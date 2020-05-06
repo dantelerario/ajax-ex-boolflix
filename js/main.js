@@ -75,7 +75,7 @@ function ajaxCall(query) {
             } else if (movies.original_language === 'it') {
               var flagLanguage = '<img class="flag" src="img/it.svg">';
             } else {
-              var flagLanguage = movies.original_language;
+              var flagLanguage = '"' + movies.original_language + '"';
             }
             var results = {
               poster_path: 'https://image.tmdb.org/t/p/' + 'w342' + movies.poster_path,
