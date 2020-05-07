@@ -24,7 +24,7 @@ header .input {
 }
 header .boxSearch {
   background: rgba(96,96,96,.8);
-  color: #fff;
+  color: rgba(0,0,0, .8);;
   padding: 10px;
   margin: 0 10px;
   border: 0px solid transparent;
@@ -34,7 +34,7 @@ header .boxSearch {
 }
 header .btnSearch {
   background: rgba(96,96,96,.8);
-  color: #fff;
+  color: rgba(0,0,0, .8);
   padding: 10px;
   margin: 0 10px;
   border: 0px;
@@ -42,6 +42,7 @@ header .btnSearch {
   width: 100px;
   outline: none;
   cursor: pointer;
+  font-size: 14px;
 }
 /* MAIN */
 body {
