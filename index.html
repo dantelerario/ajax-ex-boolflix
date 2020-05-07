@@ -27,12 +27,27 @@
     <script id="template" type="text/x-handlebars-template">
       <div class="movie">
           <img class="poster" src="{{{poster_path}}}" alt="">
-          <div class="hidden">
-            <h3>TITOLO: "{{title}}"</h3>
-            <span class="originalTitle">TITOLO ORIGINALE: "{{original_title}}"</span>
-            <span class="originalLanguage">LINGUA ORIGINALE: {{{original_language}}}</span>
-            <span class="voteAverage">VOTO MEDIO: "{{{vote_average}}}"</span>
-            <span class="type">TIPO: "{{type}}"</span>
+          <div class="movieInfo hidden">
+            <ul>
+              <li>
+                <h3>TITOLO: "{{title}}"</h3>
+              </li>
+              <li>
+                <span class="originalTitle">TITOLO ORIGINALE: "{{original_title}}"</span>
+              </li>
+              <li>
+                <span class="originalLanguage">LINGUA ORIGINALE: {{{original_language}}}</span>
+              </li>
+              <li>
+                <span class="voteAverage">VOTO MEDIO: "{{{vote_average}}}"</span>
+              </li>
+              <li>
+                <span class="type">TIPO: "{{type}}"</span>
+              </li>
+              <li>
+                <span class="overview">PLOT: "{{overview}}"</span>
+              </li>
+            </ul>
           </div>
       </div>
     </script>

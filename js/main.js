@@ -82,6 +82,7 @@ function ajaxCall(query) {
             } else {
               var posterPath = 'https://image.tmdb.org/t/p/' + 'w342' + movies.poster_path;
             }
+            var overview = movies.overview.substr(0, 400) + '...';
             var results = {
               poster_path: posterPath,
               title: movies.title,
@@ -89,6 +90,7 @@ function ajaxCall(query) {
               original_language: flagLanguage,
               vote_average: addStars(movies.vote_average),
               type: 'MOVIE',
+              overview: overview,
             }
             var htmlMoviesList = template(results);
             console.log(results);
@@ -116,6 +118,7 @@ function ajaxCall(query) {
                   } else {
                     var posterPath = 'https://image.tmdb.org/t/p/' + 'w342' + tv.poster_path;
                   }
+                var overview = tv.overview.substr(0, 400) + '...';
                 var results = {
                   poster_path: posterPath,
                   title: tv.name,
@@ -123,6 +126,7 @@ function ajaxCall(query) {
                   original_language: flagLanguage,
                   vote_average: addStars(tv.vote_average),
                   type: 'TV',
+                  overview: overview,
                 }
                 var htmlTvList = template(results);
                 console.log(results);
