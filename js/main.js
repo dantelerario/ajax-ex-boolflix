@@ -105,7 +105,7 @@ function ajaxCall(query) {
                   } else if (tv.original_language === 'it') {
                     var flagLanguage = '<img class="flag" src="img/it.svg">';
                   } else {
-                    var flagLanguage = tv.original_language;
+                    var flagLanguage = '"' + tv.original_language + '"';
                   }
                   if (tv.poster_path === null) {
                     var posterPath = 'img/no-poster.png';
